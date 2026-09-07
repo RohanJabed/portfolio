@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rohan Jabed — Full Stack Developer",
-  description: "Portfolio of Rohan Jabed — Full Stack Web Developer, Problem Solver and AI/ML Enthusiast.",
+  title: "Md. Rohan Jabed — Junior Full Stack Developer",
+  description: "Portfolio of Md. Rohan Jabed — Junior Full Stack Developer, Computer Science & Engineering student.",
   icons: { icon: "/favicon.svg" }
 };
 

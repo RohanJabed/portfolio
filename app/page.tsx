@@ -1,50 +1,62 @@
 import {
   ArrowDownRight,
   ArrowUpRight,
-  BriefcaseBusiness,
   Code2,
   ExternalLink,
   Github,
   GraduationCap,
+  Globe,
   Linkedin,
   Mail,
   MapPin,
-  Menu,
+  Phone,
   Sparkles,
   Trophy,
-  X,
+  Award,
+  BookOpen,
 } from "lucide-react";
 
 const projects = [
   {
     number: "01",
     title: "Pawsitive",
-    type: "Pet Adoption Platform",
-    stack: ["Next.js", "Tailwind CSS", "Express.js", "MongoDB", "JWT", "Google OAuth"],
-    description:
-      "A full-stack adoption platform with pet discovery, filtering, adoption requests, owner dashboards, wishlists and protected routes.",
+    subtitle: "Pet Adoption Platform",
+    stack: ["Next.js", "React", "Express.js", "MongoDB", "Tailwind CSS", "JWT", "Google OAuth"],
+    summary:
+      "A full-stack platform connecting people with pets in need of adoption through searchable listings, adoption requests, and owner dashboards.",
+    highlights: [
+      "Implemented JWT authentication and Google OAuth with protected routes for secure access.",
+      "Built pet search and filtering with wishlist management and an adoption-request workflow.",
+      "Developed owner dashboards for managing pet listings and adoption requests with a responsive, mobile-first UI.",
+      "Deployed frontend and backend on Vercel with MongoDB Atlas for persistent data storage.",
+    ],
     accent: "lime",
-    href: "https://github.com/RohanJabed",
+    links: [
+      { label: "Live Demo", href: "https://pawsitive-demo.vercel.app" },
+      { label: "Client/Server GitHub", href: "https://github.com/RohanJabed/Pawsitive" },
+      { label: "Backend API", href: "https://github.com/RohanJabed/Pawsitive-API" },
+    ],
   },
   {
     number: "02",
     title: "LifeShare",
-    type: "Blood Donation Platform",
-    stack: ["Next.js", "Express.js", "MongoDB", "Stripe", "JWT"],
-    description:
-      "A donor-recipient platform with donation requests, donor search, role-based dashboards, district/upazila filtering and payment integration.",
+    subtitle: "Blood Donation Platform",
+    stack: ["Next.js", "Express.js", "MongoDB", "Stripe", "JWT", "Bcrypt", "RBAC"],
+    summary:
+      "A blood donation platform connecting donors and recipients across Bangladesh with role-based dashboards, donor search, and donation requests.",
+    highlights: [
+      "Implemented JWT authentication, bcrypt password hashing, and Admin/Donor/Volunteer role permissions.",
+      "Built CRUD operations and protected dashboards for managing donation requests.",
+      "Added donor search with Bangladesh district/upazila filters for faster matching.",
+      "Integrated Stripe for funding and deployed the frontend and backend on Vercel.",
+    ],
     accent: "violet",
-    href: "https://github.com/RohanJabed",
-  },
-  {
-    number: "03",
-    title: "SkillSphere",
-    type: "Online Learning Platform",
-    stack: ["Next.js", "React", "MongoDB", "Tailwind CSS", "Better Auth"],
-    description:
-      "A responsive course experience using the Next.js App Router, dynamic course pages, API fetching and middleware-based route protection.",
-    accent: "cyan",
-    href: "https://github.com/RohanJabed",
+    links: [
+      { label: "Live Demo", href: "https://lifeshare-demo.vercel.app" },
+      { label: "Client GitHub", href: "https://github.com/RohanJabed/LifeShare-Client" },
+      { label: "Server GitHub", href: "https://github.com/RohanJabed/LifeShare-Server" },
+      { label: "Backend API", href: "https://github.com/RohanJabed/LifeShare-API" },
+    ],
   },
 ];
 
@@ -55,48 +67,81 @@ const githubProjects = [
   { name: "joddha-platformer-game", label: "Platformer game", lang: "Java" },
 ];
 
-const skills = [
-  ["Frontend", "React.js", "Next.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
-  ["Backend", "Node.js", "Express.js", "REST APIs", "JWT", "RBAC"],
-  ["Data & Payments", "MongoDB", "Mongoose", "MySQL", "Stripe"],
-  ["Tools", "Git", "GitHub", "Vercel", "OAuth 2.0", "CRUD", "API Integration"],
+const skillCategories = [
+  {
+    category: "Frontend",
+    items: ["React.js", "Next.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design"],
+  },
+  {
+    category: "Backend",
+    items: ["Node.js", "Express.js", "REST APIs", "JWT Authentication", "Role-Based Access Control"],
+  },
+  {
+    category: "Database & Payments",
+    items: ["MongoDB", "Mongoose", "MySQL", "Stripe"],
+  },
+  {
+    category: "Tools & Concepts",
+    items: ["Git", "GitHub", "Vercel", "OAuth 2.0", "CRUD", "API Integration", "Agile/Scrum Basics"],
+  },
+  {
+    category: "Interpersonal",
+    items: ["Problem Solving", "Research", "Technical Writing", "Team Collaboration"],
+  },
+];
+
+const achievements = [
+  {
+    icon: Trophy,
+    title: "Global Nominee",
+    organization: "NASA Space Apps Challenge",
+    description: "Nominated globally for creating innovative space data solutions.",
+  },
+  {
+    icon: Award,
+    title: "Finalist",
+    organization: "Hult Prize",
+    description: "Recognized as a finalist for impact-driven social entrepreneurship solutions.",
+  },
 ];
 
 export default function Home() {
   return (
     <main>
       <header className="nav">
-        <a href="#top" className="brand" aria-label="Rohan Jabed home">
+        <a href="#top" className="brand" aria-label="Md. Rohan Jabed home">
           <span className="brand-mark">RJ</span>
-          <span>ROHAN<span className="muted">/</span>JABED</span>
+          <span>MD. ROHAN<span className="muted">/</span>JABED</span>
         </a>
         <nav className="nav-links">
           <a href="#work">Work</a>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#research">Research</a>
+          <a href="#achievements">Achievements</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="nav-cta" href="/Rohan_Jabed_Resume.pdf" download>
+        <a className="nav-cta" href="/Rohan_Jabed_Resume.pdf" target="_blank" rel="noreferrer" download="Md_Rohan_Jabed_Resume.pdf">
           Resume <ArrowDownRight size={16} />
         </a>
       </header>
 
       <section id="top" className="hero shell">
         <div className="hero-copy">
-          <div className="eyebrow"><span className="pulse" /> AVAILABLE FOR SOFTWARE ENGINEERING INTERNSHIPS</div>
+          <div className="eyebrow">
+            <span className="pulse" /> JUNIOR FULL STACK DEVELOPER
+          </div>
           <h1>
-            I build digital
-            <span className="outline"> products</span>
+            Building scalable,
+            <span className="outline"> user-focused</span>
             <br />
-            that feel <span className="accent-text">alive.</span>
+            web <span className="accent-text">solutions.</span>
           </h1>
           <p className="hero-sub">
-            Full Stack Web Developer · Problem Solver · AI/ML Enthusiast
+            Junior Full Stack Developer · CSE Student · Problem Solver
           </p>
           <p className="hero-description">
-            Final-year CSE student at United International University, building modern
-            full-stack applications with React, Next.js, Node.js and MongoDB.
+            Ambitious Computer Science and Engineering student at United International University with hands-on experience in full-stack development using React.js, Next.js, Node.js, Express.js, and MongoDB. Fast learner who enjoys solving challenging problems and turning ideas into practical, real-world solutions.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#work">Explore my work <ArrowUpRight size={18} /></a>
@@ -113,34 +158,34 @@ export default function Home() {
           <div className="code-card">
             <div className="window-dots"><i /><i /><i /></div>
             <div className="code-line"><span className="pink">const</span> <span className="blue">developer</span> = {"{"}</div>
-            <div className="code-line indent"><span className="green">name</span>: <span className="yellow">&quot;Rohan Jabed&quot;</span>,</div>
-            <div className="code-line indent"><span className="green">focus</span>: <span className="yellow">&quot;Full Stack&quot;</span>,</div>
-            <div className="code-line indent"><span className="green">curiosity</span>: <span className="yellow">&quot;AI × Web&quot;</span>,</div>
-            <div className="code-line indent"><span className="green">status</span>: <span className="yellow">&quot;building...&quot;</span></div>
+            <div className="code-line indent"><span className="green">name</span>: <span className="yellow">&quot;Md. Rohan Jabed&quot;</span>,</div>
+            <div className="code-line indent"><span className="green">role</span>: <span className="yellow">&quot;Junior Full Stack Developer&quot;</span>,</div>
+            <div className="code-line indent"><span className="green">stack</span>: <span className="yellow">&quot;React · Next.js · Node · MongoDB&quot;</span>,</div>
+            <div className="code-line indent"><span className="green">status</span>: <span className="yellow">&quot;building & solving...&quot;</span></div>
             <div className="code-line">{"}"}</div>
             <div className="cursor" />
           </div>
           <div className="floating-tag tag-one">NEXT.JS</div>
-          <div className="floating-tag tag-two">NODE.JS</div>
-          <div className="floating-tag tag-three">AI / ML</div>
+          <div className="floating-tag tag-two">EXPRESS.JS</div>
+          <div className="floating-tag tag-three">MONGODB</div>
         </div>
       </section>
 
       <div className="marquee-wrap">
         <div className="marquee">
-          <span>FULL STACK</span><b>✦</b><span>REACT</span><b>✦</b><span>NEXT.JS</span><b>✦</b>
-          <span>NODE.JS</span><b>✦</b><span>AI / ML</span><b>✦</b><span>PROBLEM SOLVING</span><b>✦</b>
-          <span>FULL STACK</span><b>✦</b><span>REACT</span><b>✦</b><span>NEXT.JS</span><b>✦</b>
+          <span>REACT.JS</span><b>✦</b><span>NEXT.JS</span><b>✦</b><span>NODE.JS</span><b>✦</b>
+          <span>EXPRESS.JS</span><b>✦</b><span>MONGODB</span><b>✦</b><span>REST APIs</span><b>✦</b>
+          <span>STRIPE</span><b>✦</b><span>JWT AUTH</span><b>✦</b><span>PROBLEM SOLVING</span><b>✦</b>
         </div>
       </div>
 
       <section id="work" className="section shell">
         <div className="section-heading">
           <div>
-            <span className="section-kicker">SELECTED WORK / 01</span>
-            <h2>Things I&apos;ve built.</h2>
+            <span className="section-kicker">SELECTED PROJECTS / 01</span>
+            <h2>Featured Work.</h2>
           </div>
-          <p>Real products, real systems, and a lot of curiosity behind each one.</p>
+          <p>Full-stack web applications built with modern architectures, secure authentication, and database integrations.</p>
         </div>
 
         <div className="project-list">
@@ -148,14 +193,26 @@ export default function Home() {
             <article className={`project-card ${project.accent}`} key={project.number}>
               <div className="project-number">{project.number}</div>
               <div className="project-main">
-                <span className="project-type">{project.type}</span>
+                <span className="project-type">{project.subtitle}</span>
                 <h3>{project.title}</h3>
-                <p>{project.description}</p>
+                <p>{project.summary}</p>
+                <ul className="project-bullets">
+                  {project.highlights.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
                 <div className="chips">
                   {project.stack.map((item) => <span key={item}>{item}</span>)}
                 </div>
+                <div className="project-links">
+                  {project.links.map((link, idx) => (
+                    <a key={idx} href={link.href} target="_blank" rel="noreferrer" className="action-link">
+                      {link.label} <ArrowUpRight size={13} />
+                    </a>
+                  ))}
+                </div>
               </div>
-              <a href={project.href} target="_blank" rel="noreferrer" className="circle-link" aria-label={`View ${project.title} on GitHub`}>
+              <a href={project.links[0].href} target="_blank" rel="noreferrer" className="circle-link" aria-label={`View ${project.title}`}>
                 <ArrowUpRight size={22} />
               </a>
             </article>
@@ -166,25 +223,20 @@ export default function Home() {
       <section id="about" className="section about-section">
         <div className="shell about-grid">
           <div>
-            <span className="section-kicker">ABOUT / 02</span>
-            <h2 className="big-statement">Code is how I turn curiosity into something people can use.</h2>
+            <span className="section-kicker">CAREER OBJECTIVE / 02</span>
+            <h2 className="big-statement">Turning complex challenges into scalable, real-world solutions.</h2>
           </div>
           <div className="about-copy">
             <p>
-              I&apos;m Rohan, a final-year Computer Science and Engineering student at
-              United International University. I enjoy taking an idea from a rough
-              concept to a working, polished product.
+              I am an ambitious, problem-solving-oriented Computer Science and Engineering student at United International University (UIU), Dhaka, currently in my final year with 1 trimester remaining.
             </p>
             <p>
-              My strongest lane is full-stack JavaScript: responsive interfaces,
-              REST APIs, authentication, role-based access control and database-backed
-              applications. I&apos;m also exploring AI/ML and research around how people
-              interact with uncertain AI-generated information.
+              My expertise lies in full-stack web development using React.js, Next.js, Node.js, Express.js, and MongoDB. I am passionate about building scalable, user-focused applications with secure authentication (JWT, OAuth 2.0), role-based access control, and seamless payment gateways like Stripe.
             </p>
             <div className="mini-stats">
-              <div><strong>17+</strong><span>GitHub repositories</span></div>
-              <div><strong>3</strong><span>Featured full-stack builds</span></div>
-              <div><strong>2</strong><span>Major achievements</span></div>
+              <div><strong>Final Year</strong><span>UIU CSE (1 Trimester Left)</span></div>
+              <div><strong>2+</strong><span>Major Full Stack Platforms</span></div>
+              <div><strong>Global</strong><span>NASA Space Apps Nominee</span></div>
             </div>
           </div>
         </div>
@@ -193,17 +245,19 @@ export default function Home() {
       <section id="skills" className="section shell">
         <div className="section-heading">
           <div>
-            <span className="section-kicker">TOOLKIT / 03</span>
-            <h2>My stack.</h2>
+            <span className="section-kicker">TECHNICAL SKILLS / 03</span>
+            <h2>Toolkit & Competencies.</h2>
           </div>
           <Code2 className="section-icon" size={42} />
         </div>
-        <div className="skills-grid">
-          {skills.map(([title, ...items]) => (
-            <div className="skill-block" key={title}>
-              <span className="skill-title">{title}</span>
+        <div className="skills-grid-5">
+          {skillCategories.map((group) => (
+            <div className="skill-block" key={group.category}>
+              <span className="skill-title">{group.category}</span>
               <div className="skill-items">
-                {items.map((item) => <span key={item}>{item}</span>)}
+                {group.items.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
               </div>
             </div>
           ))}
@@ -215,18 +269,49 @@ export default function Home() {
           <div className="research-badge"><Sparkles size={22} /> FINAL YEAR DESIGN PROJECT</div>
           <div>
             <span className="section-kicker">RESEARCH / 04</span>
-            <h2>Perception of AI-Generated Uncertainty</h2>
+            <h2>Perception of AI-Generated Uncertainty in Neurodivergent Users</h2>
             <p>
-              A three-phase study at United International University exploring how
-              users perceive and evaluate uncertain or hallucinated information from
-              LLM-based AI tools, combining qualitative interviews, prototype
-              development and a practitioner toolkit.
+              A comprehensive 3-phase research study involving qualitative interviews, prototype development, and practitioner toolkit creation, rigorously applying WCAG 2.1 AA accessibility standards, GDPR data privacy compliance, and ACM Ethics guidelines.
             </p>
             <div className="research-meta">
-              <span><GraduationCap size={16} /> UIU · Team of 5</span>
+              <span><GraduationCap size={16} /> UIU · Final Year Design Project</span>
               <span>WCAG 2.1 AA</span>
               <span>GDPR</span>
               <span>ACM Ethics</span>
+              <span>Qualitative & Prototyping</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="achievements" className="achievements-section">
+        <div className="shell">
+          <div className="section-heading">
+            <div>
+              <span className="section-kicker">HONORS & EDUCATION / 05</span>
+              <h2>Awards & Academic Background.</h2>
+            </div>
+          </div>
+          <div className="achievements-grid">
+            {achievements.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div className="achievement-card" key={idx}>
+                  <div className="achievement-badge"><Icon size={16} /> {item.organization}</div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              );
+            })}
+            <div className="achievement-card">
+              <div className="achievement-badge"><GraduationCap size={16} /> B.Sc. in CSE</div>
+              <h3>United International University (UIU), Dhaka</h3>
+              <p>Final Year Student (1 Trimester Remaining). Specializing in Software Engineering & Full-Stack Application Architecture.</p>
+            </div>
+            <div className="achievement-card">
+              <div className="achievement-badge"><Globe size={16} /> Languages</div>
+              <h3>Language Proficiency</h3>
+              <p><strong>Bangla:</strong> Native speaker <br /><strong>English:</strong> Professional Working Proficiency</p>
             </div>
           </div>
         </div>
@@ -235,8 +320,8 @@ export default function Home() {
       <section className="section shell github-section">
         <div className="section-heading">
           <div>
-            <span className="section-kicker">GITHUB / 05</span>
-            <h2>More from the lab.</h2>
+            <span className="section-kicker">GITHUB REPOSITORIES / 06</span>
+            <h2>More Open-Source Projects.</h2>
           </div>
           <a className="text-link" href="https://github.com/RohanJabed" target="_blank" rel="noreferrer">
             See all repositories <ArrowUpRight size={16} />
@@ -256,23 +341,28 @@ export default function Home() {
 
       <section id="contact" className="contact-section">
         <div className="shell contact-inner">
-          <span className="section-kicker">CONTACT / 06</span>
-          <h2>Let&apos;s build something<br /><span>worth shipping.</span></h2>
-          <p>Open to software engineering internships, collaborations and interesting product ideas.</p>
+          <span className="section-kicker">GET IN TOUCH / 07</span>
+          <h2>Let&apos;s build something<br /><span>exceptional together.</span></h2>
+          <p>Open to Junior Full Stack Developer roles, software engineering opportunities, and technical collaborations.</p>
+          <div className="contact-meta-info">
+            <span><MapPin size={15} /> Khilkhet, Purbo Namapara, Dhaka-1229, Bangladesh</span>
+            <span><Phone size={15} /> +880 1307-188469</span>
+            <span><Mail size={15} /> rohanjabed001@gmail.com</span>
+          </div>
           <div className="contact-actions">
-            <a className="button primary large" href="mailto:rohanjabed001@gmail.com"><Mail size={19} /> Email me</a>
+            <a className="button primary large" href="mailto:rohanjabed001@gmail.com"><Mail size={19} /> Email Me</a>
             <a className="button ghost large" href="https://www.linkedin.com/in/rohan-jabed-116b1b3b5/" target="_blank" rel="noreferrer"><Linkedin size={19} /> LinkedIn</a>
           </div>
         </div>
       </section>
 
       <footer className="footer shell">
-        <div><span className="brand-mark small">RJ</span> © 2026 Rohan Jabed</div>
+        <div><span className="brand-mark small">RJ</span> © 2026 Md. Rohan Jabed</div>
         <div className="footer-links">
           <a href="mailto:rohanjabed001@gmail.com">Email</a>
           <a href="https://github.com/RohanJabed" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/rohan-jabed-116b1b3b5/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="/Rohan_Jabed_Resume.pdf" download>Download Resume</a>
+          <a href="/Rohan_Jabed_Resume.pdf" target="_blank" rel="noreferrer" download="Md_Rohan_Jabed_Resume.pdf">Download Resume</a>
         </div>
       </footer>
     </main>
